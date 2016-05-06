@@ -26,7 +26,7 @@ public class OrderController {
 
     @RequestMapping("/select/user/order")
     @ResponseBody
-    public String bookSelectAll(HttpServletRequest request){
+    public String bookSelectAll(HttpServletRequest request){//查找订单
         String name= request.getParameter("username");
         User user=userService.findOne(name);
         int userid=user.getUserid();

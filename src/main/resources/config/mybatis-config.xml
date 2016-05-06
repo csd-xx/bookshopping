@@ -8,5 +8,6 @@
         <typeAlias alias="int" type="java.lang.Integer" />
         <typeAlias alias="user" type="com.csd.nandai.domain.User" />
         <typeAlias alias="orders" type="com.csd.nandai.domain.Orders" />
+        <typeAlias alias="detail" type="com.csd.nandai.domain.Orderdetail" />
 	</typeAliases>
 </configuration>

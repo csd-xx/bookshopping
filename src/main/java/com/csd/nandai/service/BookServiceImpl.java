@@ -22,4 +22,8 @@ public class BookServiceImpl implements BookService{
         public List<Book> findAll(PageUtil page) {
         return bookDao.findAll(page);
     }
+
+    public Book findOne(int bookid) {
+        return bookDao.findOne(bookid);
+    }
 }

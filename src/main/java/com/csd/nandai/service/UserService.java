@@ -9,4 +9,6 @@ public interface UserService {
     User findOne(String username);
 
     void save(User user);
+
+    void update(User user);
 }

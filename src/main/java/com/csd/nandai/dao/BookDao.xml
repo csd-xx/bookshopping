@@ -31,6 +31,9 @@
 	<select id="countAll" resultType="int">
 		select count(*) from book
 	</select>
+	<select id="findOne" resultType="book">
+		select * from book WHERE bookid=#{bookid}
+	</select>
 
 
 

@@ -11,6 +11,15 @@
 		
 	</select>
 
+	<select id="findOrderid" resultType="orders">
+		SELECT * FROM orders WHERE userid=#{userid} AND ordertime=#{ordertime}
 
+	</select>
+
+	<insert id="save">
+		insert into orders (userid,ordertime,orderprice,orderremark)
+		values
+		(#{userid},#{ordertime},#{orderprice},#{orderremark})
+	</insert>
 
 </mapper>

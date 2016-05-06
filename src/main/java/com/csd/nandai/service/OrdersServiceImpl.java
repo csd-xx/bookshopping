@@ -2,6 +2,7 @@ package com.csd.nandai.service;
 
 import com.csd.nandai.dao.OrdersDao;
 import com.csd.nandai.domain.Orders;
+import com.csd.nandai.util.OrderidUtil;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -17,5 +18,13 @@ public class OrdersServiceImpl implements OrdersService {
     private OrdersDao ordersDao;
     public List<Orders> findOne(int userid) {
         return ordersDao.findOne(userid);
+    }
+
+    public void save(Orders orders) {
+        ordersDao.save(orders);
+    }
+
+    public Orders findOrderid(OrderidUtil ou) {
+        return ordersDao.findOrderid(ou);
     }
 }

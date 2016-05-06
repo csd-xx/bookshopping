@@ -16,5 +16,10 @@
 	</insert>
 
 
+	<update id="update">
+		UPDATE user SET username=#{username},password=#{password},sex=#{sex},birthday=#{birthday},email=#{email},address=#{address} where userid=#{userid}
+	</update>
+
+
 
 </mapper>

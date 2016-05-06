@@ -12,4 +12,6 @@ public interface BookService {
     int countAll();
 
     List<Book> findAll(PageUtil page);
+
+    Book findOne(int bookid);
 }

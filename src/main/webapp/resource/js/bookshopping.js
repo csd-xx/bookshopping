@@ -85,13 +85,13 @@ function adminLogin() {//打开管理员登录框
 //        }
 //    });
 //}
-function userRegister() {
+function userRegister() {//用户注册
 	 var jsonUrl = ctx + '/user/register.htm';
 
 	 $('#registerform').form('submit', {
 			url : jsonUrl,
 			success : function() {
-                alert("登录成功");
+                alert("注册成功");
 					$('#register').dialog('close'); // close the dialog
 					
 				}
@@ -109,4 +109,97 @@ function selectUserOrders(){//查询用户订单
     var jsonUrl=ctx+'/select/user/order.htm?username='+name;
     $('#userOrders').dialog('open').dialog('setTitle', '用户订单');
     $('#dgUserOrders').datagrid('load',jsonUrl);
+}
+function shoppingCart(){//添加购物车
+
+    var row = $('#bookdata').datagrid('getSelected');
+    if(row){
+        var jsonUrl=ctx+'/shoppingcart.htm?bookid='+row.bookid;
+        $('#dlshoppingcart').dialog('open').dialog('setTitle', '购物车');
+        $('#dgshoppingcart').datagrid({url:jsonUrl});
+    }else{
+        alert("请选择图书");
+    }
+}
+
+function addBook(){//打开图书信息框
+    var jsonUrl=ctx+'/book/select/all.htm';
+    $('#dlcartbook').dialog('open').dialog('setTitle', '图书列表');
+    $('#dgcartbook').datagrid({
+        pagination : true,
+        url:jsonUrl});
+    var pager = $('#dgcartbook').datagrid('getPager');
+    pager.pagination({
+        pageList: [5, 10, 15, 20],
+        displayMsg: '当前显示 {from} 到  {to}, 共 {total} 条记录'
+    })
+}
+
+function cartAddBook(){//购物车添加图书
+    var row = $('#dgcartbook').datagrid('getSelected');
+    if(row){
+        var jsonUrl=ctx+'/shoppingcart.htm?bookid='+row.bookid;
+        $('#dgshoppingcart').datagrid({
+            pagination : true,
+            url:jsonUrl});
+        $('#dlcartbook').dialog('close');
+    }
+}
+function addOrders(){//添加订单
+    var jsonUrl=ctx+'/add/orders.htm?username='+name;
+
+    $('#fmshoppingcart').form('submit', {
+        url : jsonUrl,
+        success : function(result) {
+            var result = eval('(' + result + ')');
+            if (result.errorMsg) {
+                $.messager.show({
+                    title : 'Error',
+                    msg : result.errorMsg
+                });
+            } else {
+                alert("下单成功");
+                $('#dlshoppingcart').dialog('close'); // close the dialog
+            }
+        }
+    });
+}
+
+function userSelectDetail(){//查询订单明细
+    var row = $('#dgUserOrders').datagrid('getSelected');
+    if(row){
+        var jsonUrl=ctx+'/user/select/detail.htm?orderid='+row.orderid;
+        $('#userOrderdetail').dialog('open').dialog('setTitle', '购物车');
+        $('#dgUserOrderdetail').datagrid({
+            pagination : true,
+            url:jsonUrl});
+
+    }
+
+}
+
+function updateUser(){//修改用户信息
+    var jsonUrl=ctx+'/update/user.htm?username='+name;
+    $('#userform').form('submit', {
+        url : jsonUrl,
+        success : function(result) {
+            var result = eval('(' + result + ')');
+            if (result.errorMsg) {
+                $.messager.show({
+                    title : 'Error',
+                    msg : result.errorMsg
+                });
+            } else {
+                alert("修改成功");
+                $('#userEdit').dialog('close'); // close the dialog
+
+            }
+        }
+    });
+
+}
+function cancelShoppingCart(){//取消购物车
+    var jsonUrl=ctx + '/orders/cancel.htm'
+    $('#dgshoppingcart').datagrid({url:jsonUrl});
+
 }

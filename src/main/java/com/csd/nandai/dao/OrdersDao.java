@@ -1,6 +1,7 @@
 package com.csd.nandai.dao;
 
 import com.csd.nandai.domain.Orders;
+import com.csd.nandai.util.OrderidUtil;
 
 import java.util.List;
 
@@ -9,4 +10,8 @@ import java.util.List;
  */
 public interface OrdersDao {
     List<Orders> findOne(int userid);
+
+    void save(Orders orders);
+
+    Orders findOrderid(OrderidUtil ou);
 }

@@ -12,4 +12,6 @@ public interface BookDao {
     int countAll();
 
     List<Book> findAll(PageUtil page);
+
+    Book findOne(int bookid);
 }

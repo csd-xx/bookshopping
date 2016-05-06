@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.csd.nandai.dao.DetailDao">
+
+
+
+	<select id="findOne" resultType="com.csd.nandai.domain.Orderdetail">
+		SELECT * FROM orderdetail where orderid=#{orderid} ORDER BY orderdetailid
+	</select>
+
+
+	<insert id="save">
+		insert into orderdetail (orderid,bookid,booknum)
+		values
+		(#{orderid},#{bookid},#{booknum})
+	</insert>
+
+
+</mapper>
