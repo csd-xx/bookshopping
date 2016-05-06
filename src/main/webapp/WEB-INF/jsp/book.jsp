@@ -23,7 +23,7 @@
     <%@ include file="/WEB-INF/jsp/inc-easyui.jsp" %>
     <script type="text/javascript">
         var ctx = "${ctx}";
-        var name =<%=session.getAttribute("user")%>;
+        var name =<%=session.getAttribute("user")%>;//用户登录是获取登录名
 
     </script>
     <script type="text/javascript" src="${ctx}/resource/js/bookshopping.js" charset="UTF-8">
@@ -64,10 +64,7 @@
     <div id="userEdit" class="easyui-dialog" style="width:400px;height:280px;padding:10px 20px"
          closed="true" buttons="#dlg-userEdit">
         <form id="userform" method="post">
-            <div class="fitem">
-                <label>用户名:</label>
-                <input name="username" class="easyui-validatebox" required="true">
-            </div>
+
             <div class="fitem">
                 <label>密&nbsp&nbsp码:</label>
                 <input name="password" class="easyui-validatebox" required="true">
