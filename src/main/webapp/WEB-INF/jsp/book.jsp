@@ -30,7 +30,9 @@
     </script>
 <body onload="loginLoad()">
 <div class="easyui-layout" style="width:1000px;height:500px; margin: auto;">
-    <div data-options="region:'north',split:true" style="height: 50px; margin: auto;text-align: center;">网上书店</div>
+    <div data-options="region:'north',split:true" style="height: 50px; margin: auto;text-align: center;">
+        <a href="${ctx}/index.jsp">网上书店</a>
+    </div>
     <div region="west" split="true" title="操作框" style="width:250px;">
         <%@ include file="/WEB-INF/jsp/user-left.jsp" %>
     </div>
@@ -150,6 +152,7 @@
         </form>
         <div id="dlgbookshopping">
             <a href="#" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="addBook()">添加图书</a>
+            <a href="#" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="removeBook()">移除图书</a>
             <a href="#" class="easyui-linkbutton" iconCls="icon-ok" plain="true" onclick="addOrders()">确认下单</a>
         </div>
     </div>
@@ -180,7 +183,6 @@
             <a href="#" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="cartAddBook()">加入购物车</a>
         </div>
     </div>
-
 
 </div>
 

@@ -6,6 +6,7 @@
       <h3>
         <li><a href="#" onclick="selectUserEdit()">编辑我的信息</a></li>
         <li><a href="#" onclick="selectUserOrders()">我的订单</a></li>
+        <li><a href="#" onclick="selectShoppingCart()">我的购物车</a></li>
       </h3>
     </ul>
 

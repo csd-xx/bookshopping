@@ -34,4 +34,13 @@ public class OrderController {
         JSONArray js=JSONArray.fromObject(list);
         return js.toString();
     }
+
+    @RequestMapping("/admin/select/orders")
+    @ResponseBody
+    public String adminSelectOrders(HttpServletRequest request){//查找订单
+        int userid=Integer.parseInt(request.getParameter("userid"));
+        List<Orders> list=ordersService.findOne(userid);
+        JSONArray js=JSONArray.fromObject(list);
+        return js.toString();
+    }
 }

@@ -8,6 +8,13 @@
 		SELECT * FROM USER where username=#{username}
 	</select>
 
+	<select id="findUser" resultType="user">
+		SELECT * FROM USER where userid=#{userid}
+	</select>
+
+	<select id="findAll" resultType="user">
+		SELECT * FROM USER
+	</select>
 
 	<insert id="save">
 		insert into user (username,password,sex,birthday,email,address)
@@ -20,6 +27,8 @@
 		UPDATE user SET username=#{username},password=#{password},sex=#{sex},birthday=#{birthday},email=#{email},address=#{address} where userid=#{userid}
 	</update>
 
-
+	<delete id="delete">
+		delete from user where userid=#{userid}
+	</delete>
 
 </mapper>

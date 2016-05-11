@@ -14,4 +14,10 @@ public interface BookDao {
     List<Book> findAll(PageUtil page);
 
     Book findOne(int bookid);
+
+    void save(Book book);
+
+    void update(Book book);
+
+    void delete(int bookid);
 }

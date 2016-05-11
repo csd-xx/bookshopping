@@ -5,6 +5,7 @@ import com.csd.nandai.domain.User;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * Created by Administrator on 2016-05-04.
@@ -25,5 +26,17 @@ public class UserServiceImpl implements UserService {
 
     public void update(User user) {
         userDaO.update(user);
+    }
+
+    public List<User> findAll() {
+        return userDaO.findAll();
+    }
+
+    public User findUser(int userid) {
+        return userDaO.findUser(userid);
+    }
+
+    public void delete(int userid) {
+        userDaO.delete(userid);
     }
 }

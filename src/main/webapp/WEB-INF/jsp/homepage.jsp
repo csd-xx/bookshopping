@@ -30,11 +30,11 @@
     <form id="userlogin" method="post" action="${ctx}/user/select/one.htm" onsubmit="return check()">
         <div class="fitem">
             <label>用户名:</label>
-            <input name="username" class="easyui-validatebox" required="true">
+            <input name="username" class="easyui-validatebox" required="true" missingMessage="请输入用户名!">
         </div>
         <div class="fitem">
             <label>密&nbsp&nbsp码:</label>
-            <input name="password" class="easyui-validatebox" required="true">
+            <input name="password" type="password" class="easyui-validatebox" required="true" missingMessage="请输入密码!">
         </div>
         <input type="submit"  name="button" id="button" value="登陆" >
 
@@ -44,23 +44,22 @@
     <a href="#" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#userlogin').dialog('close')">取消</a>
 </div>
 <%--管理员登录--%>
-<div id="adminlogin" class="easyui-dialog" style="width:400px;height:280px;padding:10px 20px"
-     closed="true" buttons="#adminlogin">
-    <form id="adminlogin" method="post">
+<div id="dladminlogin" class="easyui-dialog" style="width:400px;height:280px;padding:10px 20px"
+     closed="true" buttons="#dlgadminlogin">
+    <form id="fmadminlogin" method="post" action="${ctx}/admin/select/one.htm" onsubmit="return check()">
         <div class="fitem">
             <label>用户名:</label>
-            <input name="adminname" class="easyui-validatebox" required="true">
+            <input name="adminname" class="easyui-validatebox" required="true" missingMessage="请输入用户名!">
         </div>
         <div class="fitem">
             <label>密&nbsp&nbsp码:</label>
-            <input name="password" class="easyui-validatebox" required="true">
+            <input name="password" type="password" class="easyui-validatebox" required="true" missingMessage="请输入密码!">
         </div>
-
+        <input type="submit"  name="button" id="button" value="登陆" >
 
     </form>
 </div>
-<div id="adminlogin">
-    <a href="#" class="easyui-linkbutton" iconCls="icon-ok" onclick="">登录</a>
+<div id="dlgadminlogin">
     <a href="#" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#adminlogin').dialog('close')">取消</a>
 </div>
 
@@ -70,27 +69,27 @@
     <form id="registerform" method="post">
         <div class="fitem">
             <label>用户名:</label>
-            <input name="username" class="easyui-validatebox" required="true">
+            <input name="username" class="easyui-validatebox" required="true" missingMessage="请输入用户名!">
         </div>
         <div class="fitem">
             <label>密&nbsp&nbsp码:</label>
-            <input name="password" class="easyui-validatebox" required="true">
+            <input name="password" class="easyui-validatebox" required="true" missingMessage="请输入密码!">
         </div>
         <div class="fitem">
             <label>性&nbsp&nbsp别:</label>
-            <input name="sex" class="easyui-validatebox" required="true">
+            <input name="sex" class="easyui-validatebox" required="true" missingMessage="请输入性别!">
         </div>
         <div class="fitem">
             <label>生&nbsp&nbsp日:</label>
-            <input name="birthday" class="easyui-validatebox" required="true">
+            <input name="birthday" class="easyui-validatebox" required="true" missingMessage="请输入您的出生日期!">
         </div>
         <div class="fitem">
             <label>邮&nbsp&nbsp箱:</label>
-            <input name="email" class="easyui-validatebox" required="true">
+            <input name="email" class="easyui-validatebox" required="true" missingMessage="请输入您的邮箱!" >
         </div>
         <div class="fitem">
             <label>地&nbsp&nbsp址:</label>
-            <input name="address" class="easyui-validatebox" required="true">
+            <input name="address" class="easyui-validatebox" required="true" missingMessage="请输入您的地址!">
         </div>
 
 

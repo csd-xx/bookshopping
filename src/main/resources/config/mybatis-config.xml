@@ -9,5 +9,6 @@
         <typeAlias alias="user" type="com.csd.nandai.domain.User" />
         <typeAlias alias="orders" type="com.csd.nandai.domain.Orders" />
         <typeAlias alias="detail" type="com.csd.nandai.domain.Orderdetail" />
+        <typeAlias alias="admin" type="com.csd.nandai.domain.Admin" />
 	</typeAliases>
 </configuration>

@@ -4,6 +4,7 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import net.sf.json.JSONArray;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -13,6 +14,8 @@ import com.csd.nandai.service.UserService;
 import com.csd.nandai.util.Success;
 
 import net.sf.json.JSONObject;
+
+import java.util.List;
 
 /**
  * Created by Administrator on 2016-05-04.
@@ -66,5 +69,44 @@ public class UserController {
         s.setSuccess(true);
         return JSONObject.fromObject(s).toString();
     }
-    
+    @RequestMapping("/admin/select/user")
+    @ResponseBody
+    public String adminUser(){//管理员页面加载用户信息
+        List<User> userList=userService.findAll();
+        JSONArray js=JSONArray.fromObject(userList);
+        return js.toString();
+    }
+    @RequestMapping("/admin/select/one/user")
+    @ResponseBody
+    public String adminSelectUser(HttpServletRequest request){//管理员查询用户信息
+        int userid=Integer.parseInt(request.getParameter("userid"));
+        User user=userService.findUser(userid);
+        JSONArray js=JSONArray.fromObject(user);
+        return js.toString();
+    }
+    @RequestMapping("/open/admin/edit/user")
+    @ResponseBody
+    public String openAdminEditUser(HttpServletRequest request){//管理员修改用户信息加载
+        int userid=Integer.parseInt(request.getParameter("userid"));
+        User user=userService.findUser(userid);
+        return JSONObject.fromObject(user).toString();
+    }
+    @RequestMapping("/admin/edit/user")
+    @ResponseBody
+    public String adminUpdateUser(User user) {//更改用户信息
+        userService.update(user);
+        Success s=new Success();
+        s.setSuccess(true);
+        return JSONObject.fromObject(s).toString();
+    }
+    @RequestMapping("/admin/delete/user")
+    @ResponseBody
+    public String adminDeleteBook(HttpServletRequest request){//删除用户信息
+        int userid=Integer.parseInt(request.getParameter("userid"));
+        userService.delete(userid);
+        Success s=new Success();
+        s.setSuccess(true);
+        System.out.println(JSONObject.fromObject(s).toString());
+        return JSONObject.fromObject(s).toString();
+    }
 }
