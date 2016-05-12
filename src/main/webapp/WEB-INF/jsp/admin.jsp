@@ -29,7 +29,7 @@
   <div region="west" split="true" title="操作框" style="width:250px;">
     <%@ include file="admin-left.jsp"%>
   </div>
-  <div id="content" data-options="region:'center'" title="管理员操作" style="padding:5px;style="width: 750px; height: 450px"" >
+  <div id="content" data-options="region:'center'" title="管理员操作" style="padding:5px;width: 750px; height: 450px" >
   <%--加载图书--%>
   <div id="dlgadminbookshopping">
     请输入图书编号:<input id="bookid" name="bookid" >
