@@ -33,7 +33,7 @@ function loginLoad() {//用户登录时加载页面时加载出图书信息
         displayMsg: '当前显示 {from} 到  {to}, 共 {total} 条记录'
     })
 }
-function userLogin() {//打开用户登录框
+function openUserLogin() {//打开用户登录框
     $('#userlogin').dialog('open').dialog('setTitle', '用户登录');
 }
 
@@ -43,11 +43,24 @@ function register() {//打开用户注册框
 
 }
 
-function adminLogin() {//打开管理员登录框
+function openAdminLogin() {//打开管理员登录框
 
     $('#dladminlogin').dialog('open').dialog('setTitle', '管理员登录');
 
 }
+//function userLogin(){
+//    var jsonUrl = ctx + '/user/select/one.htm';
+//    $('#fmuserlogin').form('submit', {
+//        url: jsonUrl,
+//    });
+//}
+//function adminLogin(){
+//    var jsonUrl = ctx + '/admin/select/one.htm';
+//    $('#fmadminlogin').form('submit', {
+//        url: jsonUrl,
+//    });
+//}
+
 function userRegister() {//用户注册
     var jsonUrl = ctx + '/user/register.htm';
 
@@ -78,8 +91,11 @@ function shoppingCart() {//添加购物车
     var row = $('#bookdata').datagrid('getSelected');
     if (row) {
         var jsonUrl = ctx + '/shoppingcart.htm?bookid=' + row.bookid;
-        $('#dlshoppingcart').dialog('open').dialog('setTitle', '购物车');
-        $('#dgshoppingcart').datagrid({url: jsonUrl});
+        //$('#dlshoppingcart').dialog('open').dialog('setTitle', '购物车');
+        $('#dgshoppingcart').datagrid({
+
+            url: jsonUrl
+        });
     } else {
         alert("请选择图书");
     }
@@ -370,7 +386,7 @@ function selectShoppingCart() {//用户查询自己的购物车
     var jsonUrl = ctx + '/look/shopping/cart.htm';
     $('#dlshoppingcart').dialog('open').dialog('setTitle', '购物车信息');
     $('#dgshoppingcart').datagrid({
-        pagination: true,
+
         url: jsonUrl
     });
 }

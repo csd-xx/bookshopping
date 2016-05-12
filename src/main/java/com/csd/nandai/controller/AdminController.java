@@ -16,6 +16,7 @@ import javax.servlet.http.HttpSession;
 public class AdminController {
     @Resource
     private AdminService adminService;
+
     @RequestMapping("/admin/select/one")
     public String userLogin(HttpServletRequest request){//登录
         String adminname=request.getParameter("adminname");

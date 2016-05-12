@@ -59,31 +59,31 @@
   <div id="dladdbook" class="easyui-dialog" style="width:400px;height:280px;padding:10px 20px"
        closed="true" buttons="#dlg-buttons">
     <form id="fmaddbook" method="post">
-      <div class="fitem">
+      <div class="fitem" style="padding:5px;">
         <label>图书名:</label>
         <input name="bookname" class="easyui-validatebox" required="true">
       </div>
-      <div class="fitem">
+      <div class="fitem" style="padding:5px;">
         <label>作&nbsp&nbsp者:</label>
         <input name="author" class="easyui-validatebox" required="true">
       </div>
-      <div class="fitem">
+      <div class="fitem" style="padding:5px;">
         <label>出版社:</label>
         <input name="publishing" class="easyui-validatebox" required="true">
       </div>
-      <div class="fitem">
+      <div class="fitem" style="padding:5px;">
         <label>出厂时间:</label>
         <input name="publishtime" class="easyui-validatebox" required="true">
       </div>
-      <div class="fitem">
+      <div class="fitem" style="padding:5px;">
         <label>单&nbsp&nbsp价:</label>
         <input name="bookprice" class="easyui-validatebox" required="true">
       </div>
-      <div class="fitem">
+      <div class="fitem" style="padding:5px;">
         <label>库&nbsp&nbsp存:</label>
         <input name="amount" class="easyui-validatebox" required="true">
       </div>
-      <div class="fitem">
+      <div class="fitem" style="padding:5px;">
         <label>备&nbsp&nbsp注:</label>
         <input name="remark" class="easyui-validatebox" required="true">
       </div>
@@ -97,35 +97,35 @@
   <div id="dleditbook" class="easyui-dialog" style="width:400px;height:280px;padding:10px 20px"
        closed="true" buttons="#dlgeditbook">
     <form id="fmeditbook" method="post">
-      <div class="fitem">
+      <div class="fitem" style="padding:5px;">
         <label>图书ID:</label>
         <input name="bookid" class="easyui-validatebox" required="true" readonly>
       </div>
-      <div class="fitem">
+      <div class="fitem" style="padding:5px;">
         <label>图书名:</label>
         <input name="bookname" class="easyui-validatebox" required="true">
       </div>
-      <div class="fitem">
+      <div class="fitem" style="padding:5px;">
         <label>作&nbsp&nbsp者:</label>
         <input name="author" class="easyui-validatebox" required="true">
       </div>
-      <div class="fitem">
+      <div class="fitem" style="padding:5px;">
         <label>出版社:</label>
         <input name="publishing" class="easyui-validatebox" required="true">
       </div>
-      <div class="fitem">
+      <div class="fitem" style="padding:5px;">
         <label>出厂时间:</label>
         <input name="publishtime" class="easyui-validatebox" required="true">
       </div>
-      <div class="fitem">
+      <div class="fitem" style="padding:5px;">
         <label>单&nbsp&nbsp价:</label>
         <input name="bookprice" class="easyui-validatebox" required="true">
       </div>
-      <div class="fitem">
+      <div class="fitem" style="padding:5px;">
         <label>库&nbsp&nbsp存:</label>
         <input name="amount" class="easyui-validatebox" required="true">
       </div>
-      <div class="fitem">
+      <div class="fitem" style="padding:5px;">
         <label>备&nbsp&nbsp注:</label>
         <input name="remark" class="easyui-validatebox" required="true">
       </div>
@@ -168,27 +168,27 @@
   <div id="dladminadduser" class="easyui-dialog" style="width:400px;height:280px;padding:10px 20px"
        closed="true" buttons="#dlgadminadduser">
     <form id="fmadminadduser" method="post">
-      <div class="fitem">
+      <div class="fitem" style="padding:5px;">
         <label>用户名:</label>
         <input name="username" class="easyui-validatebox" required="true" missingMessage="请输入用户名!">
       </div>
-      <div class="fitem">
+      <div class="fitem" style="padding:5px;">
         <label>密&nbsp&nbsp码:</label>
         <input name="password" class="easyui-validatebox" required="true" missingMessage="请输入密码!">
       </div>
-      <div class="fitem">
+      <div class="fitem" style="padding:5px;">
         <label>性&nbsp&nbsp别:</label>
         <input name="sex" class="easyui-validatebox" required="true" missingMessage="请输入性别!">
       </div>
-      <div class="fitem">
+      <div class="fitem" style="padding:5px;">
         <label>生&nbsp&nbsp日:</label>
         <input name="birthday" class="easyui-validatebox" required="true" missingMessage="请输入您的出生日期!">
       </div>
-      <div class="fitem">
+      <div class="fitem" style="padding:5px;">
         <label>邮&nbsp&nbsp箱:</label>
         <input name="email" class="easyui-validatebox" required="true" missingMessage="请输入您的邮箱!">
       </div>
-      <div class="fitem">
+      <div class="fitem" style="padding:5px;">
         <label>地&nbsp&nbsp址:</label>
         <input name="address" class="easyui-validatebox" required="true" missingMessage="请输入地址!">
       </div>
@@ -202,31 +202,31 @@
   <div id="dladminedituser" class="easyui-dialog" style="width:400px;height:280px;padding:10px 20px"
        closed="true" buttons="#dlgadminedituser">
     <form id="fmadminedituser" method="post">
-      <div class="fitem">
+      <div class="fitem" style="padding:5px;">
         <label>用户ID:</label>
         <input name="userid" class="easyui-validatebox" required="true" readonly>
       </div>
-      <div class="fitem">
+      <div class="fitem" style="padding:5px;">
         <label>用户名:</label>
         <input name="username" class="easyui-validatebox" required="true" readonly>
       </div>
-      <div class="fitem">
+      <div class="fitem" style="padding:5px;">
         <label>密&nbsp&nbsp码:</label>
         <input name="password" class="easyui-validatebox" required="true">
       </div>
-      <div class="fitem">
+      <div class="fitem" style="padding:5px;">
         <label>性&nbsp&nbsp别:</label>
         <input name="sex" class="easyui-validatebox" required="true">
       </div>
-      <div class="fitem">
+      <div class="fitem" style="padding:5px;">
         <label>生&nbsp&nbsp日:</label>
         <input name="birthday" class="easyui-validatebox" required="true">
       </div>
-      <div class="fitem">
+      <div class="fitem" style="padding:5px;">
         <label>邮&nbsp&nbsp箱:</label>
         <input name="email" class="easyui-validatebox" required="true">
       </div>
-      <div class="fitem">
+      <div class="fitem" style="padding:5px;">
         <label>地&nbsp&nbsp址:</label>
         <input name="address" class="easyui-validatebox" required="true">
       </div>

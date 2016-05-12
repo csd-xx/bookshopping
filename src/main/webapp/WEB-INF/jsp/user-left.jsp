@@ -1,7 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<div class="easyui-accordion" style="width:300px;height:400px;">
+<div class="easyui-accordion" style="width:150px;height:400px; text-align:center; margin: auto;">
 
-  <div title="请选择" iconCls="icon-reload" selected="true" style="padding:10px;">
+  <div title="请选择" iconCls="icon-reload" selected="true" style="padding:10px; width:150px; text-align:center; margin: auto;">
     <ul>
       <h3>
         <li><a href="#" onclick="selectUserEdit()">编辑我的信息</a></li>

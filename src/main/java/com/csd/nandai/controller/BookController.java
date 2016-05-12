@@ -13,6 +13,7 @@ import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
@@ -33,6 +34,7 @@ public class BookController {
     private OrdersService ordersService;
     @Resource
     private DetailService detailService;
+
     List<Book> bookList = new ArrayList<Book>();
 
     @RequestMapping("/book/select/all")
@@ -61,9 +63,8 @@ public class BookController {
 
     @RequestMapping("/shoppingcart")
     @ResponseBody
-    public String shoppingCart(HttpServletRequest request) {//往购物车里添加图书
+    public String shoppingCart(@RequestParam("bookid")int bookid) {//往购物车里添加图书
         boolean j = true;
-        int bookid = Integer.parseInt(request.getParameter("bookid"));
         Book book = bookService.findOne(bookid);
         for (Book a : bookList) {
             if (a.getBookid() == bookid) {
