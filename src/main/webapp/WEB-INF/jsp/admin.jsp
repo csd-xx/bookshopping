@@ -12,11 +12,11 @@
       margin-top: 30px;
     }
   </style>
+
+
   <%@ include file="/WEB-INF/jsp/inc-easyui.jsp"%>
   <script type="text/javascript">
     var ctx = "${ctx}";
-
-
   </script>
   <script type="text/javascript" src="${ctx}/resource/js/bookshopping.js" charset="UTF-8">
   </script>
@@ -44,7 +44,7 @@
     <tr>
       <th field="bookid" width="30">图书编号</th>
       <th field="bookname" width="30">图书名称</th>
-      <th field="categoryid" width="30">类别id</th>
+      <%--<th field="categoryid" width="30">类别id</th>--%>
       <th field="author" width="30">作者</th>
       <th field="publishing" width="35">出版社</th>
       <th field="publishtime" width="30">出版时间</th>

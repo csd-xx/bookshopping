@@ -11,6 +11,6 @@
     <title>登录失败</title>
 </head>
 <body>
-用户名或密码错误
+用户名或密码错误<a href="${ctx}/index.jsp">返回首页</a>
 </body>
 </html>

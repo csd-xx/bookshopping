@@ -30,7 +30,9 @@ public class UserController {
         String username=request.getParameter("username");
         String password=request.getParameter("password");
         User user=userService.findOne(username);
-        if(password.equals(user.getPassword())){
+        if(null==user) {
+            return "/error.jsp";
+        }else if(password.equals(user.getPassword())){
             HttpSession session = request.getSession();
             session.setAttribute("user", user.getUsername());
             return "/book.jsp";
@@ -54,7 +56,6 @@ public class UserController {
     public String userEdit(HttpServletRequest request){//查找用户信息
         String name= request.getParameter("username");
         User user=userService.findOne(name);
-
         System.out.println(JSONObject.fromObject(user).toString());
         return JSONObject.fromObject(user).toString();
     }

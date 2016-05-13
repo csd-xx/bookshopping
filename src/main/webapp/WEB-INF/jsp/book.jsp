@@ -1,11 +1,3 @@
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<%--
-  Created by IntelliJ IDEA.
-  User: Administrator
-  Date: 2016-05-04
-  Time: 17:23
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -31,29 +23,30 @@
             position: absolute;
             right: 10px;
         }
-
     </style>
-    <%@ include file="/WEB-INF/jsp/inc-easyui.jsp" %>
+
+    <%@ include file="/WEB-INF/jsp/inc-easyui.jsp"%>
     <script type="text/javascript">
         var ctx = "${ctx}";
-        var name =<%=session.getAttribute("user")%>;//用户登录是获取登录名
-        $('#easyui-layout').layout('collapse', 'east');
+        var name ="<%=session.getAttribute("user")%>";//用户登录是获取登录名
+
     </script>
     <script type="text/javascript" src="${ctx}/resource/js/bookshopping.js" charset="UTF-8">
     </script>
+</head>
 <body onload="loginLoad()">
 <div class="easyui-layout" style="width:1000px;height:500px; margin: auto;">
     <%--开头--%>
     <div class="title" data-options="region:'north',split:true" style="height: 50px; margin: auto;text-align: center;">
         <a href="${ctx}/index.jsp">网上书店</a>
 
-        <div class="name" style="width:60px; margin: auto;"><%=session.getAttribute("user")%>,欢迎光临</div>
+        <div class="name" style="width:100px; margin: auto;"><%=session.getAttribute("user")%>,欢迎光临</div>
     </div>
     <%--购物车--%>
     <div region="east" iconCls="icon-reload" title="购物车" split="true" style="width:230px; ">
 
             <form id="fmshoppingcart" method="post" style="padding:5px;text-align:center;">
-                <table id="dgshoppingcart" title="购物车信息" class="easyui-datagrid" style="width: 220px; height: 400px"
+                <table id="dgshoppingcart" title="购物车信息" class="easyui-datagrid" style="width: 220px; height: 370px"
                        toolbar="#edlgbookshopping" rownumbers="true" fitColumns="true" singleSelect="true">
                     <thead>
                     <tr>
@@ -93,10 +86,9 @@
                 <th field="author" width="30">作者</th>
                 <th field="publishing" width="35">出版社</th>
                 <th field="publishtime" width="30">出版时间</th>
-                <th field="categoryid" width="30">类别id</th>
+                <%--<th field="categoryid" width="30">类别id</th>--%>
                 <th field="amount" width="30">图书库存</th>
                 <th field="remark" width="30">备注</th>
-
             </tr>
             </thead>
         </table>
@@ -198,6 +190,7 @@
         <%--<div id="dlgcancelshoppingcart">--%>
         <%--<a href="#" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="cancelShoppingCart()">取消购物车</a>--%>
         <%--</div>--%>
+
         <%--图书列表--%>
         <div id="dlcartbook" class="easyui-dialog" style="width:800px;height:400px;padding:10px 20px"
              closed="true" buttons="">
@@ -208,7 +201,7 @@
                 <tr>
                     <th field="bookid" width="30">图书编号</th>
                     <th field="bookname" width="30">图书名称</th>
-                    <th field="categoryid" width="30">类别id</th>
+                    <%--<th field="categoryid" width="30">类别id</th>--%>
                     <th field="author" width="30">作者</th>
                     <th field="publishing" width="35">出版社</th>
                     <th field="publishtime" width="30">出版时间</th>

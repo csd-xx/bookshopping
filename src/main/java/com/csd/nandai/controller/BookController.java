@@ -87,6 +87,7 @@ public class BookController {
         DateUtil d = new DateUtil();
         String ordertime = d.getTime();
         String username = request.getParameter("username");
+        System.out.println(username);
         User user = userService.findOne(username);
         float total = 0;
         for (Book a : bookList) {

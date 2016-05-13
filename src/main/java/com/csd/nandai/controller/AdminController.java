@@ -22,12 +22,14 @@ public class AdminController {
         String adminname=request.getParameter("adminname");
         String password=request.getParameter("password");
         Admin admin=adminService.findOne(adminname);
-        if(password.equals(admin.getPassword())){
+        System.out.println(admin);
+        if(null==admin) {
+            return "/error.jsp";
+        }else if(password.equals(admin.getPassword())){
+            System.out.println(111111);
             return "/admin.jsp";
-        }
-        else{
+        }else{
             return "/error.jsp";
         }
-
     }
 }

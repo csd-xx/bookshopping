@@ -1,3 +1,4 @@
+//var name=username;
 function load() {//加载页面时加载出图书信息
 
     var jsonUrl = ctx + '/book/select/all.htm';
@@ -101,19 +102,19 @@ function shoppingCart() {//添加购物车
     }
 }
 
-function addBook() {//打开图书信息框
-    var jsonUrl = ctx + '/book/select/all.htm';
-    $('#dlcartbook').dialog('open').dialog('setTitle', '图书列表');
-    $('#dgcartbook').datagrid({
-        pagination: true,
-        url: jsonUrl
-    });
-    var pager = $('#dgcartbook').datagrid('getPager');
-    pager.pagination({
-        pageList: [5, 10, 15, 20],
-        displayMsg: '当前显示 {from} 到  {to}, 共 {total} 条记录'
-    })
-}
+//function addBook() {//打开图书信息框
+//    var jsonUrl = ctx + '/book/select/all.htm';
+//    $('#dlcartbook').dialog('open').dialog('setTitle', '图书列表');
+//    $('#dgcartbook').datagrid({
+//        pagination: true,
+//        url: jsonUrl
+//    });
+//    var pager = $('#dgcartbook').datagrid('getPager');
+//    pager.pagination({
+//        pageList: [5, 10, 15, 20],
+//        displayMsg: '当前显示 {from} 到  {to}, 共 {total} 条记录'
+//    })
+//}
 
 function cartAddBook() {//购物车添加图书
     var row = $('#dgcartbook').datagrid('getSelected');
@@ -130,7 +131,6 @@ function cartAddBook() {//购物车添加图书
 }
 function addOrders() {//添加订单
     var jsonUrl = ctx + '/add/orders.htm?username=' + name;
-
     $('#fmshoppingcart').form('submit', {
         url: jsonUrl,
         success: function (result) {
@@ -142,6 +142,7 @@ function addOrders() {//添加订单
                 });
             } else {
                 alert("下单成功");
+                $('#dgshoppingcart').datagrid('reload');
                 $('#dlshoppingcart').dialog('close'); // close the dialog
             }
         }
@@ -333,7 +334,7 @@ function adminEditUser() {//修改用户信息
         }
     });
 }
-function adminDeleteUser() {
+function adminDeleteUser() {//删除用户
     var row = $('#dgcontroluser').datagrid('getSelected');
     if (row) {
         $.messager.confirm('Confirm', '确定删除该用户吗?', function (r) {
@@ -382,21 +383,19 @@ function detailSelectBook() {//查询图书
         alert("请选择订单明细");
     }
 }
-function selectShoppingCart() {//用户查询自己的购物车
-    var jsonUrl = ctx + '/look/shopping/cart.htm';
-    $('#dlshoppingcart').dialog('open').dialog('setTitle', '购物车信息');
-    $('#dgshoppingcart').datagrid({
-
-        url: jsonUrl
-    });
-}
+//function selectShoppingCart() {//用户查询自己的购物车
+//    var jsonUrl = ctx + '/look/shopping/cart.htm';
+//    $('#dlshoppingcart').dialog('open').dialog('setTitle', '购物车信息');
+//    $('#dgshoppingcart').datagrid({
+//        url: jsonUrl
+//    });
+//}
 function removeBook() {//移除购物车中的图书
 
     var row = $('#dgshoppingcart').datagrid('getSelected');
     if (row) {
         var jsonUrl = ctx + '/remove/book.htm?bookid=' + row.bookid;
         $('#dgshoppingcart').datagrid({
-            pagination: true,
             url: jsonUrl
         });
     } else {
