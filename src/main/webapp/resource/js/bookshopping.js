@@ -330,6 +330,7 @@ function adminEditUser() {//修改用户信息
         url: jsonUrl,
         success: function () {
             alert("修改成功");
+            //$('#dladminedituser').dialog('');
             $('#dladminedituser').dialog('close'); // close the dialog
         }
     });

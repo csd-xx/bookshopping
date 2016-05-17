@@ -25,6 +25,7 @@ public class UserServiceImpl implements UserService {
     }
 
     public void update(User user) {
+        System.err.println(user.getSex());
         userDaO.update(user);
     }
 
